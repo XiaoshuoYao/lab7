@@ -35,7 +35,21 @@
 		</div>
 
 		<h4>Projects</h4>
-		{{#each projects}}
+		{{#if viewAlt}}
+			{{#each projects}}
+			<div class="project" id="{{id}}">
+				<div class="thumbnail">
+					<a href="/project/{{id}}">
+						<img src="images/{{image}}" alt="Lorem Pixel image" class="img-responsive">
+						<h4>{{title}}</h4>
+					</a>
+					<div class="likeCtr">Min!<button class="likeBtn">Like</button></div>
+					<div class="details"></div>
+				</div>
+			</div>
+			{{/each}}
+		{{else}}
+			{{#each projects}}
 			<div class="project" id="{{id}}">
 				<div class="thumbnail">
 					<a href="/project/{{id}}">
@@ -46,7 +60,9 @@
 					<div class="details"></div>
 				</div>
 			</div>
-		{{/each}}
+			{{/each}}
+		{{/if}}
+		
 
 
 </body>
